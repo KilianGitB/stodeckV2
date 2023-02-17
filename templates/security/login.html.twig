@@ -52,12 +52,12 @@
                         <input type="hidden" name="_csrf_token"
                                value="{{ csrf_token('authenticate') }}"
                         >
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Connexion</button>
+                        </div>
                     </form>
                 </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Connexion</button>
-                    </div>
             </div>
         </div>
     </div>
