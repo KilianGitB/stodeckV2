@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+    <div class="justify-content-center mt-5 pt-5 container-fluid col-6">
+
+        <h1>Article index</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Date d'ajout</th>
+                    <th>Date de destockage</th>
+                    <th>Serial Number</th>
+                    <th>Etat</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>{{ article.name }}</td>
+                    <td>{{ article.dateAdded ? article.dateAdded|date('Y-m-d') : '' }}</td>
+                    <td>{{ article.destockingDate ? article.destockingDate|date('Y-m-d') : '' }}</td>
+                    <td>{{ article.serialNumber }}</td>
+                    <td>{{ article.state ? 'Epuisé' : 'En stock' }}</td>
+                    <td>
+                        <a href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Aucun article</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_article_new') }}">Ajouter un article</a>
+    </div>
+{% endblock %}

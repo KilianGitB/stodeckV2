@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau client{% endblock %}
+
+{% block body %}
+    <div class="justify-content-center mt-5 pt-5 container-fluid col-6">
+        <h1>Ajouter un nouveau client</h1>
+            {{ form_start(form) }}
+            <div class='form-group'>
+                <label for="name" class='col-5'>Nom du client :</label>
+                {{ form_widget(form.name)}}
+            </div>
+            <div class='form-group'>    
+                <label for="date_added" class='col-5'>Adresse :</label>
+                {{ form_widget(form.address)}}
+            </div>
+            <div class='form-group'>
+                <button type="submit" class="btn btn-primary mt-5">Enregistrer</button>
+            </div>
+            {{ form_end(form)}}
+        </div>
+    </div>
+{% endblock %}

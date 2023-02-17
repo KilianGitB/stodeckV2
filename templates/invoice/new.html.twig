@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sortie de stock{% endblock %}
+
+{% block body %}
+    <div class="justify-content-center mt-5 pt-5 container-fluid col-6">
+        <h1>Destockage</h1>
+            {{ form_start(form) }}
+            <div class='form-group'>
+                <label for="customer" class='col-5'>Nom du client :</label>
+                {{ form_widget(form.customer)}}
+            </div>
+            <div class='form-group'>    
+                <label for="date" class='col-5'>Date :</label>
+                {{ form_widget(form.date)}}
+            </div>
+            <div class='form-group'>    
+                <label for="articles" class='col-5'>Article :</label>
+                    {{ form_widget(form.article)}}
+            </div>
+            <div class='form-group'>
+                <button type="submit" class="btn btn-primary mt-5">Enregistrer</button>
+            </div>
+            {{ form_end(form)}}
+        </div>
+    </div>
+{% endblock %}

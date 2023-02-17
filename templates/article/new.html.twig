@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un article{% endblock %}
+
+{% block body %}
+    <div class="justify-content-center mt-5 pt-5 container-fluid col-6">
+        <h1>Ajouter un nouvel article</h1>
+            {{ form_start(form) }}
+            <div class='form-group'>
+                <label for="name" class='col-5'>Nom de l'article :</label>
+                {{ form_widget(form.name)}}
+            </div>
+            <div class='form-group'>    
+                <label for="date_added" class='col-5'>Date d'ajout :</label>
+                {{ form_widget(form.date_added)}}
+            </div>
+            <div class='form-group'>
+                <label for="category" class='col-5'>Categorie :</label>
+                {{ form_widget(form.category)}}
+            </div>
+            <div class='form-group'>
+                <label for="serial_number" class='col-5'>S/N :</label>
+                {{ form_widget(form.serial_number)}}
+            </div>
+            <div class='form-group'>
+                <button type="submit" class="btn btn-primary mt-5">Enregistrer</button>
+            </div>
+            {{ form_end(form)}}
+        </div>
+    </div>
+{% endblock %}
